@@ -1,0 +1,49 @@
+/* src/styles/ITTemplate.css */
+
+.it-resume {
+  width: 800px;
+  background: white;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+/* HEADER */
+.it-header {
+  background: #2f3b4f;
+  color: white;
+  padding: 30px;
+  text-align: left;
+}
+
+.it-header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.it-header h2 {
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* BODY */
+.it-body {
+  padding: 30px;
+}
+
+.it-body section {
+  margin-bottom: 25px;
+}
+
+.it-body h3 {
+  color: #2f3b4f;
+  border-bottom: 2px solid #f4c430;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.it-body p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
