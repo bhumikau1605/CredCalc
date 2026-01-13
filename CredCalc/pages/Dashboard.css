@@ -1,0 +1,136 @@
+.dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/dashboard-bg.jpg"); /* make sure this image is in public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* HEADER */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar {
+  width: 44px;
+  height: 44px;
+  background: #1da1f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* HEADER BUTTONS */
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.header-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* TITLE */
+.dashboard-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard-card {
+  background: rgba(192, 180, 180, 0.08);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  background: rgba(0, 0, 0, 0.12);
+}
+.user-avatar {
+  background: #00b3ff;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.icon-wrapper {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 15px;
+  background: #000000;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-card-title {
+  font-size: 16px;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.icon.blue { background: #00b3ff; }
+.icon.yellow { background: #ffc83d; }
+.icon.green { background: #3ddc97; }
+.icon.purple { background: #b56bff; }
+
+.resume {
+  grid-column: span 2;
+}

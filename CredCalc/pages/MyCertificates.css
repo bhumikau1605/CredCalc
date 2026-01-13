@@ -1,0 +1,213 @@
+/* Full-screen background like Activity page */
+.mycert-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/activity-bg.jpg") center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* Glassmorphism card */
+.mycert-card {
+  width: 100%;
+  max-width: 1040px;
+  background:  rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  padding: 28px 32px 32px;
+  color: #000000;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* Back button bar */
+.mycert-back-btn {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+
+  background: rgba(0, 0, 0, 0.7);
+  color: #f9fbff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+.mycert-back-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Title */
+.mycert-title {
+  margin: 0 0 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Top row: filter + count */
+.mycert-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Filter block */
+.mycert-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mycert-filter label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mycert-filter select {
+  min-width: 160px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  font-size: 14px;
+}
+
+/* Count text */
+.mycert-count {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Empty state */
+.mycert-empty {
+  margin: 40px 0 10px;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* Certificates grid */
+.mycert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin: 10px 0 24px;
+}
+
+/* Single certificate card */
+.mycert-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  color: inherit;
+
+  transition: background 0.25s ease, transform 0.1s ease, box-shadow 0.25s ease;
+}
+
+.mycert-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.mycert-item-icon {
+  font-size: 26px;
+}
+
+.mycert-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.mycert-item-tag {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* Footer note */
+.mycert-footer-text {
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .mycert-card {
+    padding: 22px 18px 24px;
+  }
+
+  .mycert-title {
+    font-size: 26px;
+  }
+
+  .mycert-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mycert-back-btn {
+    font-size: 15px;
+  }
+}
+.remove-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #ff5252;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #e53935;
+}
+.cert-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.download-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.download-btn:hover { background-color: #45a049; }
+.delete-btn:hover { background-color: #d32f2f; }
