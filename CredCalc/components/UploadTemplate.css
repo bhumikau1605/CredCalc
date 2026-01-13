@@ -1,0 +1,105 @@
+.upload-page {
+  min-height: 100vh;
+  background-image: url("/activity-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  font-family: "Poppins", sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+.upload-card {
+  background: #00000010;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  width: 450px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.upload-card h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.upload-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.back-btn {
+  background: #000000;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #333;
+}
+
+.file-input {
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  color: black;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #ed3700, #5286ee);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.upload-btn:hover {
+  opacity: 0.85;
+}
+
+/* ✅ Upload Progress Bar */
+
+.progress-wrapper {
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ed3700, #5286ee);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 6px;
+  font-size: 14px;
+}
