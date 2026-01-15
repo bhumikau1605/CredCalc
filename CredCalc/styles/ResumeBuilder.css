@@ -416,3 +416,58 @@
   display: block;
 }
 
+.keyword-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 10px;
+}
+
+.keyword-chip {
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #eee;
+  font-size: 12px;
+}
+
+.keyword-chips.present .keyword-chip {
+  background: #d4f8d4;
+}
+
+.keyword-chips.missing .keyword-chip {
+  background: #ffe3cf;
+}
+.field-hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.preset-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 10px;
+}
+
+.preset-chip-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.preset-chip {
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+}
+
+.preset-delete-btn {
+  border: none;
+  background: transparent;
+  color: #c00;
+  font-size: 12px;
+  margin-left: 2px;
+  cursor: pointer;
+}
