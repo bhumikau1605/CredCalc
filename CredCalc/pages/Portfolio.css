@@ -1,0 +1,236 @@
+.portfolio-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: url("/activity-bg.jpg") center/cover no-repeat;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.portfolio-card-wrap {
+    margin-top:60px;
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  padding: 24px 28px 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-card-wrap h2 {
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.portfolio-sub {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #444;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.portfolio-card {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+.portfolio-tech {
+  font-style: italic;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.portfolio-desc {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.portfolio-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  font-size: 11px;
+}
+
+.portfolio-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.portfolio-links a {
+  font-size: 13px;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.portfolio-links a:hover {
+  text-decoration: underline;
+}
+
+.portfolio-empty {
+  margin-top: 8px;
+  color: #555;
+}
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.portfolio-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* filter pills */
+.portfolio-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.portfolio-filter-btn {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.portfolio-filter-active {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* cards clickable */
+.portfolio-card {
+  text-align: left;
+  padding: 12px 14px 10px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+    background 0.12s ease-out;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  background: #f3f4f6;
+}
+
+.portfolio-card-expanded {
+  background: #e5f2ff;
+}
+
+/* keep existing .portfolio-tech, .portfolio-desc, .portfolio-tags, .portfolio-links */
+
+.portfolio-toggle-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #777;
+}
+.portfolio-card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.portfolio-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.portfolio-badge-easy {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.portfolio-badge-medium {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.portfolio-badge-hard {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* reaction chips */
+.portfolio-reactions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.portfolio-chip {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.12s ease-out, transform 0.12s ease-out,
+    box-shadow 0.12s ease-out;
+}
+
+.portfolio-chip:hover {
+  background: #f97316;
+  color: #ffffff;
+  border-color: #f97316;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto 24px auto; /* center horizontally */
+  padding: 14px 32px;
+
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-chip-active {
+  background: #f97316;
+  color: #ffffff;
+  border-color: #f97316;
+}

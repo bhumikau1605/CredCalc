@@ -1,0 +1,239 @@
+/* src/pages/ApplicationsTracker.css */
+.apps-page {
+  min-height: 100vh;
+  padding: 48px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: url("/activity-bg.jpg") center/cover no-repeat;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", sans-serif;
+}
+
+.apps-card-wrap {
+margin-top:60px;
+  max-width: 1040px;
+  width: 100%;
+  border-radius: 28px;
+  padding: 28px 32px 32px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98));
+  box-shadow:
+    0 26px 60px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(148, 163, 184, 0.25);
+  color: #e5e7eb;
+}
+
+.apps-card-wrap h2 {
+  margin-bottom: 4px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.apps-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.apps-next-deadline {
+  font-size: 13px;
+  color: #e5e7eb;
+  opacity: 0.9;
+}
+
+/* FILTER SEGMENT */
+.apps-filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.apps-filters {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.5);
+}
+
+.apps-filter-btn {
+  min-width: 90px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: #9ca3af;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease-out;
+}
+
+.apps-filter-btn:hover {
+  color: #e5e7eb;
+}
+
+.apps-filter-active {
+  background: linear-gradient(135deg, #f97316, #facc15);
+  color: #111827;
+  box-shadow: 0 10px 22px rgba(248, 113, 113, 0.35);
+}
+
+.apps-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.apps-summary span {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(55, 65, 81, 0.8);
+}
+
+/* FORM SECTION */
+.apps-form-section {
+  margin-top: 6px;
+  margin-bottom: 22px;
+}
+
+.apps-form-row.top {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); /* 5 equal columns */
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.apps-form-row.bottom {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .apps-form-row.top,
+  .apps-form-row.bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+
+
+/* CARDS GRID */
+.apps-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .apps-form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .apps-form-row.small {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .apps-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.apps-card {
+  padding: 14px 16px 16px;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, #111827 0, #020617 55%);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(31, 41, 55, 0.9);
+}
+
+.apps-card h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.apps-card p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.apps-card strong {
+  color: #9ca3af;
+}
+
+.apps-card button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: #111827;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* status pills */
+.apps-status {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.apps-status-applied {
+  background: rgba(59, 130, 246, 0.18);
+  color: #bfdbfe;
+}
+
+.apps-status-test {
+  background: rgba(14, 165, 233, 0.18);
+  color: #bae6fd;
+}
+
+.apps-status-interview {
+  background: rgba(34, 197, 94, 0.18);
+  color: #bbf7d0;
+}
+
+.apps-status-offer {
+  background: rgba(251, 191, 36, 0.18);
+  color: #facc15;
+}
+
+.apps-status-rejected {
+  background: rgba(248, 113, 113, 0.18);
+  color: #fecaca;
+}
+
+.apps-empty {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto 24px auto; /* center horizontally */
+  padding: 14px 32px;
+
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
