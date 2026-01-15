@@ -23,6 +23,9 @@ import UploadCoCurricularCertificates from "./pages/UploadCoCurricularCertificat
 import EditProfile from "./pages/EditProfile.jsx";
 import Profile from "./pages/Profile.jsx";
 import UploadStudyCertificates from "./pages/UploadStudyCertificates.jsx";
+import ApplicationsTracker from "./pages/ApplicationsTracker.jsx";
+import PlacementResources from "./pages/PlacementResources.jsx";
+import Portfolio from "./pages/Portfolio.jsx";
 export default function App() {
   return (
     <Routes>
@@ -53,6 +56,10 @@ export default function App() {
       <Route path="/resume" element={<ResumeBuilder />} />
       <Route path="/edit-profile" element={<EditProfile />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/applications" element={<ApplicationsTracker />} />
+<Route path="/portfolio" element={<Portfolio />} />
+<Route path="/resources" element={<PlacementResources />} />
+
     </Routes>
   );
 }
