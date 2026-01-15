@@ -1,43 +1,99 @@
+// src/pages/MyCertificates.jsx
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./MyCertificates.css";
 
 export default function MyCertificates() {
-  const [certs, setCerts] = useState([]);
+  const navigate = useNavigate();
+  const [certificates, setCertificates] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const userId = localStorage.getItem("uid");
-    if (!userId) return;
+    if (!userId) {
+      setLoading(false);
+      return;
+    }
 
-    axios
-      .get(`http://localhost:5000/certificates/${userId}`)
-      .then((res) => setCerts(res.data))
-      .catch((err) => console.error(err));
+    const fetchCerts = async () => {
+      try {
+        const res = await fetch(`http://localhost:5000/certificates/${userId}`);
+        const data = await res.json();
+        setCertificates(data || []);
+      } catch (err) {
+        console.error("MY CERTS ERROR:", err);
+        alert("Could not load certificates");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCerts();
   }, []);
 
-  const removeCert = async (id) => {
-    await axios.delete(`http://localhost:5000/certificates/${id}`);
-    setCerts(certs.filter((c) => c._id !== id));
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this certificate?")) return;
+
+    try {
+      await fetch(`http://localhost:5000/certificates/${id}`, {
+        method: "DELETE",
+      });
+      setCertificates((prev) => prev.filter((c) => c._id !== id));
+    } catch (err) {
+      console.error("DELETE CERT ERROR:", err);
+      alert("Could not delete certificate");
+    }
   };
 
   return (
-    <div style={{ padding: 40 }}>
-      <h2>My Certificates</h2>
+  <div className="certs-page">
+    {/* back button outside card */}
+    <button className="back-btn" onClick={() => navigate("/dashboard")}>
+      ← Back to Dashboard
+    </button>
 
-      {certs.length === 0 && <p>No certificates uploaded</p>}
+    <div className="certs-overlay">
+      <header className="certs-header">
+        <h1 className="certs-title">My Certificates</h1>
+        <span className="certs-count">Total: {certificates.length}</span>
+      </header>
 
-      {certs.map((c) => (
-        <div key={c._id} style={{ marginBottom: 20 }}>
-          <h4>{c.title}</h4>
-          <p>{c.category}</p>
+      {loading ? (
+        <p>Loading certificates...</p>
+      ) : certificates.length === 0 ? (
+        <p>No certificates uploaded yet.</p>
+      ) : (
+        <div className="certs-grid">
+          {certificates.map((c) => (
+            <div key={c._id} className="cert-card">
+              <div className="cert-info">
+                <div className="cert-icon" />
+                <div>
+                  <h3>{c.title}</h3>
+                  <p>{c.category}</p>
+                </div>
+              </div>
 
-          <a href={c.fileUrl} target="_blank">View PDF</a>
-          <br />
-          <a href={c.fileUrl} download>Download</a>
-          <br />
-
-          <button onClick={() => removeCert(c._id)}>Remove</button>
+              <div className="cert-actions">
+                <button
+                  className="view-btn"
+                  onClick={() => window.open(c.fileUrl, "_blank")}
+                >
+                  View / Download
+                </button>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDelete(c._id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
-  );
+  </div>
+);
+
 }
