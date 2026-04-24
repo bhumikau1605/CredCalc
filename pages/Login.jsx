@@ -17,9 +17,8 @@ export default function Login() {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
 
-      // ✅ STORE CONSISTENT KEY
-      localStorage.setItem("userName", response.name);
       localStorage.setItem("uid", res.user.uid);
+      if (res.user.displayName) localStorage.setItem("userName", res.user.displayName);
 
       navigate("/dashboard");
     } catch (err) {
