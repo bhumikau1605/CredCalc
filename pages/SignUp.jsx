@@ -1,9 +1,6 @@
-// src/pages/SignUp.jsx
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../firebase";
+import axios from "axios";
 import "./SignUp.css";
 
 export default function SignUp() {
@@ -16,28 +13,14 @@ export default function SignUp() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     setError("");
-
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      const user = userCredential.user;
-
-      // Set Firebase displayName
-      await updateProfile(user, {
-        displayName: name,
-      });
-
-      // Consistent storage of name
-      localStorage.setItem("userName", name);
-      localStorage.setItem("uid", user.uid);
-
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, { name, email, password });
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("uid", res.data.user._id);
+      localStorage.setItem("userName", res.data.user.name);
       navigate("/dashboard");
     } catch (err) {
-      setError(err.message);
+      setError(err.response?.data?.error || "Signup failed, please try again.");
     }
   };
 
@@ -45,9 +28,7 @@ export default function SignUp() {
     <div className="signup-container">
       <div className="signup-box">
         <h2>Create Account</h2>
-
         {error && <div className="error-message">{error}</div>}
-
         <form onSubmit={handleSignUp}>
           <input
             type="text"
@@ -56,7 +37,6 @@ export default function SignUp() {
             onChange={(e) => setName(e.target.value)}
             required
           />
-
           <input
             type="email"
             placeholder="Email Address"
@@ -64,7 +44,6 @@ export default function SignUp() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-
           <input
             type="password"
             placeholder="Create Password"
@@ -72,15 +51,9 @@ export default function SignUp() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-
-          <button type="submit" className="signup-btn">
-            Sign Up
-          </button>
+          <button type="submit" className="signup-btn">Sign Up</button>
         </form>
-
-        <p>
-          Already have an account? <Link to="/login">Login</Link>
-        </p>
+        <p>Already have an account? <Link to="/login">Login</Link></p>
       </div>
     </div>
   );
