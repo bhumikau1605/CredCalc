@@ -1,0 +1,45 @@
+/* COMMON */
+.resume {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  color: black;
+}
+
+/* IT */
+.it-resume {
+  font-family: Arial, sans-serif;
+}
+.it-resume h1 {
+  font-size: 32px;
+}
+
+/* NON IT */
+.nonit-resume {
+  display: flex;
+}
+.nonit-resume aside {
+  width: 30%;
+  background: #f0f0f0;
+  padding: 20px;
+}
+.nonit-resume main {
+  width: 70%;
+  padding: 20px;
+}
+
+/* CREATIVE */
+.creative-resume header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.creative-resume img {
+  width: 120px;
+  border-radius: 50%;
+}
+.creative-resume .block {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f7f7f7;
+}

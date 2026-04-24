@@ -1,0 +1,66 @@
+/* src/pages/Login.css */
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("/login-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.login-box {
+  width: 420px;
+  padding: 40px 35px;
+
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(20px);
+
+  border-radius: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+
+  box-shadow: 
+      0 0 35px rgba(0, 153, 255, 0.3),
+      0 0 55px rgba(255, 140, 0, 0.25);
+
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: rgba(18, 0, 0, 0.18);
+
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+
+  background: linear-gradient(45deg, #ffa726, #ff5722);
+  border: none;
+  border-radius: 12px;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 126, 0, 0.45);
+}

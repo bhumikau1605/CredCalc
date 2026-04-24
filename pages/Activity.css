@@ -1,0 +1,100 @@
+.activity-page {
+  min-height: 100vh;
+  background: url("/activity-bg.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  color: #000;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto 24px auto; /* center horizontally */
+  padding: 14px 32px;
+
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.remove-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-btn:hover {
+  background:orange;
+}
+
+
+
+.card {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: orange;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.activity-item {
+  background: #2f5f6f;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.total-points {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.total-points span {
+  color: #0f172a;
+}
+

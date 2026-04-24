@@ -1,0 +1,175 @@
+.certs-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/dashboard-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 32px 60px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+/* existing glass panel styles for .certs-overlay here */
+/* make overlay nearly full width */
+.certs-overlay {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 1350px;      /* was 1180px or smaller */
+  border-radius: 30px;
+  padding: 20px 26px 30px;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.08),
+      transparent 55%
+    ),
+    rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.85);
+}
+
+/* grid: fewer columns, wider cards */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); /* wider min */
+  gap: 18px;
+  max-height: calc(100vh - 190px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* header inside panel: title left, total right */
+.certs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.certs-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.certs-count {
+  font-size: 14px;
+  opacity: 100%;
+}
+
+/* keep your previous back-btn style, but it now sits above the panel */
+.back-btn {
+  align-self: flex-start;
+  margin-bottom: 14px;
+}
+
+/* grid with subtle scroll inside panel */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  max-height: calc(100vh - 190px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* luxurious dark glass cards */
+.cert-card {
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.05),
+      transparent 60%
+    ),
+    rgba(0, 0, 0, 0.8);
+  border-radius: 22px;
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  color: #f9fafb;
+}
+
+/* icon + text */
+.cert-info {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.cert-icon {
+  width: 28px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e5e7eb, #ffffff);
+}
+
+.cert-card h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.cert-card p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.84;
+}
+
+/* buttons row */
+.cert-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.view-btn,
+.delete-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.view-btn {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #fff;
+}
+
+.view-btn:hover {
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #f97373, #ef4444);
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+@media (max-width: 720px) {
+  .certs-page {
+    padding: 24px 16px;
+  }
+
+  .certs-overlay {
+    padding: 18px 16px 24px;
+    border-radius: 22px;
+  }
+
+  .certs-grid {
+    max-height: none;
+  }
+
+  .certs-header-right {
+    align-items: flex-start;
+  }
+}

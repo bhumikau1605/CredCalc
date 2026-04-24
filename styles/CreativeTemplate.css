@@ -1,0 +1,83 @@
+.creative-resume {
+  display: flex;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* LEFT PANEL */
+.creative-left {
+  width: 30%;
+  background: #111;
+  color: white;
+  padding: 20px;
+}
+
+.creative-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.creative-left h3 {
+  margin-top: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.creative-left p {
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+/* RIGHT PANEL */
+.creative-right {
+  width: 70%;
+  padding: 25px;
+}
+
+.creative-name {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.creative-role {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.creative-section {
+  margin-bottom: 20px;
+}
+
+.creative-section h2 {
+  font-size: 16px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.creative-section p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.creative-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.creative-skill {
+  background: #000;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}

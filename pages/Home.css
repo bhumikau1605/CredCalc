@@ -1,0 +1,127 @@
+/* Fullscreen Section */
+.home-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/home-bg.jpg"); /* make sure this image is in public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark gradient overlay */
+.home-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+/* Content Box */
+.home-content {
+  position: relative;
+  max-width: 650px;
+  text-align: center;
+  padding: 40px;
+  color: white;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Title */
+.home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.home-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  margin-bottom: 30px;
+  color: #dcdcdc;
+}
+
+/* Buttons */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-btn {
+  padding: 12px 32px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+/* Primary Button */
+.home-btn.primary {
+  background: #61dafb;
+  color: black;
+}
+
+.home-btn.primary:hover {
+  background: #4ac7e8;
+}
+
+/* Secondary Button */
+.home-btn.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.home-btn.secondary:hover {
+  background: white;
+  color: black;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeIn 1.3s ease forwards;
+}
+.typing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  width: 3px;
+  background: white;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
