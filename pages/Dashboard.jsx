@@ -60,7 +60,34 @@ export default function Dashboard() {
     const userId = localStorage.getItem("uid");
     if (!userId) return;
 
-    fetch(`${import.meta.env.VITE_API_URL}/certificates/${userId}`)
+    
+    const userId = localStorage.getItem("uid");
+
+if (userId === "demo-user") {
+  setTotalCerts(12);
+  setSkillCerts(8);
+  setAcademicCerts(4);
+
+  setRecentCerts([
+    {
+      _id: "1",
+      title: "Python Programming",
+      date: "2026-01-15",
+    },
+    {
+      _id: "2",
+      title: "Web Development",
+      date: "2026-02-20",
+    },
+    {
+      _id: "3",
+      title: "Data Analytics",
+      date: "2026-03-10",
+    },
+  ]);
+
+  return;
+}fetch(`${import.meta.env.VITE_API_URL}/certificates/${userId}`)
       .then((r) => r.json())
       .then((data) => {
         setTotalCerts(data.length);

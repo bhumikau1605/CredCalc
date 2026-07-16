@@ -9,7 +9,15 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+const handleSignUp = async (e) => {
+  e.preventDefault();
 
+  localStorage.setItem("token", "demo-token");
+  localStorage.setItem("uid", "demo-user");
+  localStorage.setItem("userName", name || "Demo User");
+
+  navigate("/dashboard");
+};
   const handleSignUp = async (e) => {
     e.preventDefault();
     setError("");

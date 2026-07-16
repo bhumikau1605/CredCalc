@@ -8,7 +8,18 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  // DEMO ACCOUNT
+if (
+  email === "demo@credcalc.com" &&
+  password === "demo123"
+) {
+  localStorage.setItem("token", "demo-token");
+  localStorage.setItem("uid", "demo-user");
+  localStorage.setItem("userName", "Demo User");
 
+  navigate("/dashboard");
+  return;
+}
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -45,6 +56,18 @@ export default function Login() {
           />
           <button type="submit" className="login-btn">Login</button>
         </form>
+        <button
+  type="button"
+  className="login-btn"
+  onClick={() => {
+    localStorage.setItem("token", "demo-token");
+    localStorage.setItem("uid", "demo-user");
+    localStorage.setItem("userName", "Demo User");
+    navigate("/dashboard");
+  }}
+>
+  Try Demo
+</button>
         <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
       </div>
     </div>
