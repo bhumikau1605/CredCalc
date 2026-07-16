@@ -18,19 +18,7 @@ const handleSignUp = async (e) => {
 
   navigate("/dashboard");
 };
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-    setError("");
-    try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, { name, email, password });
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("uid", res.data.user._id);
-      localStorage.setItem("userName", res.data.user.name);
-      navigate("/dashboard");
-    } catch (err) {
-      setError(err.response?.data?.error || "Signup failed, please try again.");
-    }
-  };
+  
 
   return (
     <div className="signup-container">
