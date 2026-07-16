@@ -3,6 +3,7 @@
 A full-stack web application designed to help students manage their academic journey — from calculating CGPA and uploading certificates to building resumes and tracking job applications.
 
 🔗 **Live Demo:** [cred-calc.vercel.app](https://cred-calc.vercel.app)
+Try Demo for seamless visualization of this Web Application without the hassle for Authentication
 
 ---
 
