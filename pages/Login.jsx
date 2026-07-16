@@ -9,30 +9,40 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   // DEMO ACCOUNT
-if (
-  email === "demo@credcalc.com" &&
-  password === "demo123"
-) {
-  localStorage.setItem("token", "demo-token");
-  localStorage.setItem("uid", "demo-user");
-  localStorage.setItem("userName", "Demo User");
+const handleLogin = async (e) => {
+  e.preventDefault();
 
-  navigate("/dashboard");
-  return;
-}
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError("");
-    try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, { email, password });
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("uid", res.data.user._id);
-      localStorage.setItem("userName", res.data.user.name);
-      navigate("/dashboard");
-    } catch (err) {
-      setError(err.response?.data?.error || "Invalid credentials, please try again.");
-    }
-  };
+  // Demo Account
+  if (
+    email === "demo@credcalc.com" &&
+    password === "demo123"
+  ) {
+    localStorage.setItem("token", "demo-token");
+    localStorage.setItem("uid", "demo-user");
+    localStorage.setItem("userName", "Demo User");
+
+    navigate("/dashboard");
+    return;
+  }
+
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/auth/login`,
+      { email, password }
+    );
+
+    localStorage.setItem("token", res.data.token);
+    localStorage.setItem("uid", res.data.user._id);
+    localStorage.setItem("userName", res.data.user.name);
+
+    navigate("/dashboard");
+  } catch (err) {
+    setError(
+      err.response?.data?.error ||
+      "Invalid credentials, please try again."
+    );
+  }
+};
 
   return (
     <div className="login-container">

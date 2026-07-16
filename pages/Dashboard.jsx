@@ -55,57 +55,68 @@ export default function Dashboard() {
     }
   }, []);
 
-  // Load certificate stats + recent certs
-  useEffect(() => {
-    const userId = localStorage.getItem("uid");
-    if (!userId) return;
+ // Load certificate stats + recent certs
+useEffect(() => {
+  const userId = localStorage.getItem("uid");
 
-    
-    const userId = localStorage.getItem("uid");
+  if (!userId) return;
 
-if (userId === "demo-user") {
-  setTotalCerts(12);
-  setSkillCerts(8);
-  setAcademicCerts(4);
+  // Demo Mode
+  if (userId === "demo-user") {
+    setTotalCerts(12);
+    setSkillCerts(8);
+    setAcademicCerts(4);
 
-  setRecentCerts([
-    {
-      _id: "1",
-      title: "Python Programming",
-      date: "2026-01-15",
-    },
-    {
-      _id: "2",
-      title: "Web Development",
-      date: "2026-02-20",
-    },
-    {
-      _id: "3",
-      title: "Data Analytics",
-      date: "2026-03-10",
-    },
-  ]);
+    setRecentCerts([
+      {
+        _id: "1",
+        title: "Python Programming",
+        date: "2026-01-15",
+      },
+      {
+        _id: "2",
+        title: "Web Development",
+        date: "2026-02-20",
+      },
+      {
+        _id: "3",
+        title: "Data Analytics",
+        date: "2026-03-10",
+      },
+    ]);
 
-  return;
-}fetch(`${import.meta.env.VITE_API_URL}/certificates/${userId}`)
-      .then((r) => r.json())
-      .then((data) => {
-        setTotalCerts(data.length);
-        const skill = data.filter((c) => c.category === "Skill").length;
-        const academic = data.filter((c) => c.category === "Academic").length;
-        setSkillCerts(skill);
-        setAcademicCerts(academic);
+    return;
+  }
 
-        const sorted = [...data].sort((a, b) => {
-          if (a.date && b.date) {
-            return new Date(b.date) - new Date(a.date);
-          }
-          return 0;
-        });
-        setRecentCerts(sorted.slice(0, 3));
-      })
-      .catch((err) => console.error("DASHBOARD CERTS ERROR:", err));
-  }, []);
+  fetch(`${import.meta.env.VITE_API_URL}/certificates/${userId}`)
+    .then((r) => r.json())
+    .then((data) => {
+      setTotalCerts(data.length);
+
+      const skill = data.filter(
+        (c) => c.category === "Skill"
+      ).length;
+
+      const academic = data.filter(
+        (c) => c.category === "Academic"
+      ).length;
+
+      setSkillCerts(skill);
+      setAcademicCerts(academic);
+
+      const sorted = [...data].sort((a, b) => {
+        if (a.date && b.date) {
+          return new Date(b.date) - new Date(a.date);
+        }
+        return 0;
+      });
+
+      setRecentCerts(sorted.slice(0, 3));
+    })
+    .catch((err) =>
+      console.error("DASHBOARD CERTS ERROR:", err)
+    );
+}, []);
 
   // Load Activity Points from localStorage + recent activities
   useEffect(() => {
